@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:onClick="login1"
+        android:text="登录界面1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:onClick="login2"
+        android:text="登录界面2"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:onClick="login3"
+        android:text="登录界面3"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:onClick="dialog"
+        android:text="对话框"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:onClick="message"
+        android:text="聊天界面"/>
+
+</LinearLayout>

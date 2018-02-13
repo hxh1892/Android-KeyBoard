@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="hxh1892"/>
+
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:hint="输入内容"
+        android:inputType="text"
+        android:textColor="#666666"
+        android:textColorHint="#999999"
+        android:textSize="15sp"/>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/et"
+        android:layout_below="@id/tb">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginTop="20dp"
+                android:background="#aaaaaa"
+                android:gravity="center"
+                android:text="第1行"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#888888"
+                android:gravity="center"
+                android:text="第2行"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginTop="20dp"
+                android:background="#aaaaaa"
+                android:gravity="center"
+                android:text="第3行"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#888888"
+                android:gravity="center"
+                android:text="第4行"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginTop="20dp"
+                android:background="#aaaaaa"
+                android:gravity="center"
+                android:text="第5行"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#888888"
+                android:gravity="center"
+                android:text="第6行"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginTop="20dp"
+                android:background="#aaaaaa"
+                android:gravity="center"
+                android:text="第7行"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#888888"
+                android:gravity="center"
+                android:text="第8行"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginTop="20dp"
+                android:background="#aaaaaa"
+                android:gravity="center"
+                android:text="第9行"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#888888"
+                android:gravity="center"
+                android:text="第10行 最后"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
