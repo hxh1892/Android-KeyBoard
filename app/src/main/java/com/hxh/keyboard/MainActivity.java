@@ -39,4 +39,9 @@ public class MainActivity extends AppCompatActivity
     {
         startActivity(new Intent(this, MessageActivity.class));
     }
+
+    public void edittext(View v)
+    {
+        startActivity(new Intent(this, EditTextActivity.class));
+    }
 }

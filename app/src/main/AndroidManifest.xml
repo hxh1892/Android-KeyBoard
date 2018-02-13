@@ -11,6 +11,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -19,11 +20,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LoginActivity1"/>
-        <activity android:name=".LoginActivity2"/>
-        <activity android:name=".LoginActivity3"/>
-        <activity android:name=".DialogActivity"/>
-        <activity android:name=".MessageActivity"/>
+        <activity
+            android:name=".LoginActivity1"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LoginActivity2"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LoginActivity3"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".DialogActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MessageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".EditTextActivity"/>
 
     </application>
 

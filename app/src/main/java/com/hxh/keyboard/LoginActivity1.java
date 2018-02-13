@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,7 +15,7 @@ import android.widget.Toast;
 public class LoginActivity1 extends AppCompatActivity implements View.OnLayoutChangeListener
 {
     //Activity最外层的Layout视图
-    private View v;
+    private RelativeLayout rl;
     private ScrollView sv;
     private TextView tv;
     private EditText et1, et2;
@@ -30,7 +31,7 @@ public class LoginActivity1 extends AppCompatActivity implements View.OnLayoutCh
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login1);
 
-        v = findViewById(R.id.v);
+        rl = (RelativeLayout) findViewById(R.id.rl);
         sv = (ScrollView) findViewById(R.id.sv);
         tv = (TextView) findViewById(R.id.tv);
         et1 = (EditText) findViewById(R.id.et1);
@@ -102,7 +103,7 @@ public class LoginActivity1 extends AppCompatActivity implements View.OnLayoutCh
         super.onResume();
 
         //添加layout大小发生改变监听器
-        v.addOnLayoutChangeListener(this);
+        rl.addOnLayoutChangeListener(this);
     }
 
     @Override

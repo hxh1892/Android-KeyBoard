@@ -35,4 +35,10 @@
         android:onClick="message"
         android:text="聊天界面"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:onClick="edittext"
+        android:text="EditText与键盘关联"/>
+
 </LinearLayout>

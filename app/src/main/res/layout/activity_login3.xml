@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:onClick="close"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:onClick="close"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="120dp"
-            android:text="用KeyboardChangeListener实现"/>
 
         <EditText
             android:id="@+id/et1"
@@ -23,8 +22,9 @@
             android:layout_height="45dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="120dp"
             android:hint="手机号"
+            android:maxLines="1"
+            android:maxLength="11"
             android:inputType="number"
             android:textColor="#666666"
             android:textColorHint="#999999"
@@ -53,16 +53,11 @@
             android:layout_height="50dp"
             android:background="#00ff00"/>
 
+        <View
+            android:id="@+id/v"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:text="随便看看"
-        android:textColor="#000000"/>
-
-</RelativeLayout>
+</LinearLayout>

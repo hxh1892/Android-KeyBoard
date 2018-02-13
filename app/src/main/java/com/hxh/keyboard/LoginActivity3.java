@@ -1,37 +1,55 @@
 package com.hxh.keyboard;
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
-public class LoginActivity3 extends AppCompatActivity
+public class LoginActivity3 extends AppCompatActivity implements KeyboardChangeListener.KeyBoardListener
 {
+    private KeyboardChangeListener mKeyboardChangeListener;
+
+    private View v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login3);
+
+        mKeyboardChangeListener = new KeyboardChangeListener(this);
+        mKeyboardChangeListener.setKeyBoardListener(this);
+
+        v = findViewById(R.id.v);
     }
 
-    public void login1(View v)
+    public void close(View v)
     {
-        startActivity(new Intent(this, LoginActivity1.class));
+        //关闭键盘
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        if (imm != null)
+        {
+            imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
+        }
     }
 
-    public void login2(View v)
+    @Override
+    public void onKeyboardChange(boolean isShow, int keyboardHeight)
     {
-        startActivity(new Intent(this, LoginActivity2.class));
-    }
+        if (isShow)
+        {
+            Toast.makeText(this, "监听到软键盘弹起...", Toast.LENGTH_SHORT).show();
 
-    public void dialog(View v)
-    {
-        startActivity(new Intent(this, DialogActivity.class));
-    }
+            v.setVisibility(View.GONE);
+        }
+        else
+        {
+            Toast.makeText(this, "监听到软健盘关闭...", Toast.LENGTH_SHORT).show();
 
-    public void message(View v)
-    {
-        startActivity(new Intent(this, MessageActivity.class));
+            v.setVisibility(View.VISIBLE);
+        }
     }
 }
