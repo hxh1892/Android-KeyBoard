@@ -72,6 +72,7 @@
                 android:textSize="15sp"/>
 
             <EditText
+                android:id="@+id/et_send"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_margin="10dp"

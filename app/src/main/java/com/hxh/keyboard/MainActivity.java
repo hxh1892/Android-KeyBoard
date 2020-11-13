@@ -2,8 +2,9 @@ package com.hxh.keyboard;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity
         startActivity(new Intent(this, LoginActivity3.class));
     }
 
+    public void login4(View v)
+    {
+        startActivity(new Intent(this, LoginActivity4.class));
+    }
+
     public void dialog(View v)
     {
         startActivity(new Intent(this, DialogActivity.class));
@@ -43,5 +49,10 @@ public class MainActivity extends AppCompatActivity
     public void edittext(View v)
     {
         startActivity(new Intent(this, EditTextActivity.class));
+    }
+
+    public void layout(View v)
+    {
+        startActivity(new Intent(this, LayoutActivity.class));
     }
 }

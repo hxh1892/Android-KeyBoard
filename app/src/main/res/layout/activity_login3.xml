@@ -1,63 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.hxh.keyboard.view.KeyboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kbl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="close"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never">
 
-    <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="close"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="120dp"
+                android:text="用KeyboardLayout实现" />
+
+            <EditText
+                android:id="@+id/et1"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginRight="10dp"
+                android:hint="手机号"
+                android:inputType="number"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:textColor="#666666"
+                android:textColorHint="#999999"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/et2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:textColor="#666666"
+                android:textColorHint="#999999"
+                android:textSize="15sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="#d0d0d0"
+                android:text="登录" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#00ff00" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="15dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="底部"
+        android:textColor="#ffffff"
+        android:textSize="15dp" />
 
-        <EditText
-            android:id="@+id/et1"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:hint="手机号"
-            android:maxLines="1"
-            android:maxLength="11"
-            android:inputType="number"
-            android:textColor="#666666"
-            android:textColorHint="#999999"
-            android:textSize="15sp"/>
-
-        <EditText
-            android:id="@+id/et2"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_margin="10dp"
-            android:hint="密码"
-            android:inputType="textPassword"
-            android:textColor="#666666"
-            android:textColorHint="#999999"
-            android:textSize="15sp"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="#d0d0d0"
-            android:text="登录"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#00ff00"/>
-
-        <View
-            android:id="@+id/v"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"/>
-
-    </LinearLayout>
-
-</LinearLayout>
+</com.hxh.keyboard.view.KeyboardLayout>

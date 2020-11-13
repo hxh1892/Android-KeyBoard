@@ -26,6 +26,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:onClick="login4"
+        android:text="登录界面4"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
         android:onClick="dialog"
         android:text="对话框"/>
 
@@ -40,5 +46,11 @@
         android:layout_height="45dp"
         android:onClick="edittext"
         android:text="EditText与键盘关联"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:onClick="layout"
+        android:text="KeyboardLayout"/>
 
 </LinearLayout>

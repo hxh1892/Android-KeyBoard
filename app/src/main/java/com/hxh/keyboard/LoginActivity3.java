@@ -1,28 +1,58 @@
 package com.hxh.keyboard;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActivity3 extends AppCompatActivity implements KeyboardChangeListener.KeyBoardListener
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.hxh.keyboard.utils.KeyboardChangeListener;
+import com.hxh.keyboard.view.KeyboardLayout;
+
+import static com.hxh.keyboard.view.KeyboardLayout.KEYBOARD_STATE_HIDE;
+import static com.hxh.keyboard.view.KeyboardLayout.KEYBOARD_STATE_SHOW;
+
+public class LoginActivity3 extends AppCompatActivity
 {
-    private KeyboardChangeListener mKeyboardChangeListener;
+    private EditText et1, et2;
 
-    private View v;
-
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login3);
 
-        mKeyboardChangeListener = new KeyboardChangeListener(this);
-        mKeyboardChangeListener.setKeyBoardListener(this);
+        et1 = findViewById(R.id.et1);
+        et2 = findViewById(R.id.et2);
 
-        v = findViewById(R.id.v);
+        KeyboardLayout kbl = findViewById(R.id.kbl);
+
+        kbl.setOnKeyBordStateListener(new KeyboardLayout.onKeyBordChangeListener()
+        {
+            @Override
+            public void onKeyBoardStateChange(int state)
+            {
+                if (state == KEYBOARD_STATE_SHOW)
+                {
+                    Toast.makeText(LoginActivity3.this, "软键盘出现", Toast.LENGTH_SHORT).show();
+                }
+                else if (state == KEYBOARD_STATE_HIDE )
+                {
+                    Toast.makeText(LoginActivity3.this, "软键盘隐藏", Toast.LENGTH_SHORT).show();
+
+                    et1.clearFocus();
+                    et2.clearFocus();
+                }
+            }
+        });
     }
 
     public void close(View v)
@@ -33,23 +63,6 @@ public class LoginActivity3 extends AppCompatActivity implements KeyboardChangeL
         if (imm != null)
         {
             imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
-        }
-    }
-
-    @Override
-    public void onKeyboardChange(boolean isShow, int keyboardHeight)
-    {
-        if (isShow)
-        {
-            Toast.makeText(this, "监听到软键盘弹起...", Toast.LENGTH_SHORT).show();
-
-            v.setVisibility(View.GONE);
-        }
-        else
-        {
-            Toast.makeText(this, "监听到软健盘关闭...", Toast.LENGTH_SHORT).show();
-
-            v.setVisibility(View.VISIBLE);
         }
     }
 }

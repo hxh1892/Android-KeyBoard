@@ -1,4 +1,4 @@
-package com.hxh.keyboard;
+package com.hxh.keyboard.utils;
 
 import android.app.Activity;
 import android.os.Build;

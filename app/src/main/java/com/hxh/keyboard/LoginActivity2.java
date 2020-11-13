@@ -1,8 +1,8 @@
 package com.hxh.keyboard;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -11,62 +11,64 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.hxh.keyboard.utils.KeyboardChangeListener;
+
 public class LoginActivity2 extends AppCompatActivity implements KeyboardChangeListener.KeyBoardListener
 {
-    private KeyboardChangeListener mKeyboardChangeListener;
-
     private EditText et1, et2;
     private ScrollView sv;
     private TextView tv;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
 
-        mKeyboardChangeListener = new KeyboardChangeListener(this);
-        mKeyboardChangeListener.setKeyBoardListener(this);
+        new KeyboardChangeListener(this).setKeyBoardListener(this);
 
-        et1 = (EditText) findViewById(R.id.et1);
-        et2 = (EditText) findViewById(R.id.et2);
-        sv = (ScrollView) findViewById(R.id.sv);
-        tv = (TextView) findViewById(R.id.tv);
+        et1 = findViewById(R.id.et1);
+        et2 = findViewById(R.id.et2);
+        sv = findViewById(R.id.sv);
+        tv = findViewById(R.id.tv);
 
-        et1.setFocusable(false);
-        et2.setFocusable(false);
+//        et1.setFocusable(false);
+//        et2.setFocusable(false);
 
-        et1.setOnTouchListener(new View.OnTouchListener()
-        {
-            @Override
-            public boolean onTouch(View v, MotionEvent event)
-            {
-                et2.setFocusable(false);
+//        et1.setOnTouchListener(new View.OnTouchListener()
+//        {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event)
+//            {
+//                et2.setFocusable(false);
+//
+//                et1.setFocusable(true);//设置输入框可聚集
+//                et1.setFocusableInTouchMode(true);//设置触摸聚焦
+//                et1.requestFocus();//请求焦点
+//                et1.findFocus();//获取焦点
+//
+//                return false;
+//            }
+//        });
 
-                et1.setFocusable(true);//设置输入框可聚集
-                et1.setFocusableInTouchMode(true);//设置触摸聚焦
-                et1.requestFocus();//请求焦点
-                et1.findFocus();//获取焦点
-
-                return false;
-            }
-        });
-
-        et2.setOnTouchListener(new View.OnTouchListener()
-        {
-            @Override
-            public boolean onTouch(View v, MotionEvent event)
-            {
-                et1.setFocusable(false);
-
-                et2.setFocusable(true);//设置输入框可聚集
-                et2.setFocusableInTouchMode(true);//设置触摸聚焦
-                et2.requestFocus();//请求焦点
-                et2.findFocus();//获取焦点
-
-                return false;
-            }
-        });
+//        et2.setOnTouchListener(new View.OnTouchListener()
+//        {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event)
+//            {
+//                et1.setFocusable(false);
+//
+//                et2.setFocusable(true);//设置输入框可聚集
+//                et2.setFocusableInTouchMode(true);//设置触摸聚焦
+//                et2.requestFocus();//请求焦点
+//                et2.findFocus();//获取焦点
+//
+//                return false;
+//            }
+//        });
 
         sv.setOnTouchListener(new View.OnTouchListener()
         {
@@ -74,9 +76,9 @@ public class LoginActivity2 extends AppCompatActivity implements KeyboardChangeL
             public boolean onTouch(View v, MotionEvent event)
             {
                 //不能滑动
-                return true;
+//                return true;
                 //可以滑动
-//                return false;
+                return false;
             }
         });
     }
@@ -99,18 +101,21 @@ public class LoginActivity2 extends AppCompatActivity implements KeyboardChangeL
         {
             Toast.makeText(LoginActivity2.this, "监听到软键盘弹起...", Toast.LENGTH_SHORT).show();
 
-            tv.setVisibility(View.GONE);
-            sv.fullScroll(ScrollView.FOCUS_DOWN);
+//            tv.setVisibility(View.GONE);
+//            sv.fullScroll(ScrollView.FOCUS_DOWN);
         }
         else
         {
             Toast.makeText(LoginActivity2.this, "监听到软健盘关闭...", Toast.LENGTH_SHORT).show();
 
-            et1.setFocusable(false);
-            et2.setFocusable(false);
+            et1.clearFocus();
+            et2.clearFocus();
 
-            tv.setVisibility(View.VISIBLE);
-            sv.fullScroll(ScrollView.FOCUS_UP);
+//            et1.setFocusable(false);
+//            et2.setFocusable(false);
+
+//            tv.setVisibility(View.VISIBLE);
+//            sv.fullScroll(ScrollView.FOCUS_UP);
         }
     }
 }

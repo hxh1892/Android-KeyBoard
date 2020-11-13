@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hxh.keyboard.view.KeyboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kbl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="门店奶粉容量"
+                    android:textColor="#333333"
+                    android:textSize="14dp" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:hint="请在此输入金额"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textColor="#333333"
+                    android:textColorHint="#BBBBBB"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="节"
+                    android:textColor="#333333"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="ELN奶粉容量"
+                    android:textColor="#333333"
+                    android:textSize="14dp" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:hint="请在此输入金额"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textColor="#333333"
+                    android:textColorHint="#BBBBBB"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="节"
+                    android:textColor="#333333"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="门店货架节数"
+                    android:textColor="#333333"
+                    android:textSize="14dp" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:hint="请在此输入金额"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textColor="#333333"
+                    android:textColorHint="#BBBBBB"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="节"
+                    android:textColor="#333333"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <!--            如果外层ScrollView设置了以下属性-->
+            <!--            android:scrollbars="none"-->
+            <!--            则需要加以下代码才可实现三类键盘监听方法-->
+            <!--            如果没加，则不需要下面的代码即可实现三类键盘监听方法-->
+
+            <!--            <RelativeLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="#333C8FF0"-->
+            <!--                android:descendantFocusability="blocksDescendants">-->
+
+            <!--                <androidx.recyclerview.widget.RecyclerView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:nestedScrollingEnabled="false" />-->
+
+            <!--            </RelativeLayout>-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="#f5f5f5"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="已经到底啦"
+                android:textColor="#888888"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginVertical="15dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="#ffffff"
+        android:textSize="15dp" />
+
+</com.hxh.keyboard.view.KeyboardLayout>

@@ -1,15 +1,19 @@
 package com.hxh.keyboard;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.hxh.keyboard.utils.KeyboardChangeListener;
 
 public class MessageActivity extends AppCompatActivity implements KeyboardChangeListener.KeyBoardListener
 {
@@ -18,6 +22,7 @@ public class MessageActivity extends AppCompatActivity implements KeyboardChange
     private EditText et;
     private ScrollView sv;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -27,7 +32,7 @@ public class MessageActivity extends AppCompatActivity implements KeyboardChange
         mKeyboardChangeListener = new KeyboardChangeListener(this);
         mKeyboardChangeListener.setKeyBoardListener(this);
 
-        Toolbar tb = (Toolbar) findViewById(R.id.tb);
+        Toolbar tb = findViewById(R.id.tb);
 
         tb.setTitle("title");
 
@@ -43,8 +48,8 @@ public class MessageActivity extends AppCompatActivity implements KeyboardChange
             }
         });
 
-        et = (EditText) findViewById(R.id.et);
-        sv = (ScrollView) findViewById(R.id.sv);
+        et = findViewById(R.id.et);
+        sv = findViewById(R.id.sv);
 
         et.setFocusable(false);
 
